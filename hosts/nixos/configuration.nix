@@ -128,4 +128,15 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = stateVersion; # Did you read the comment?
 
+	networking.firewall.allowedTCPPorts = [
+		6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
+		# 2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
+		# 2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
+	];
+	networking.firewall.allowedUDPPorts = [
+		# 8472 # k3s, flannel: required if using multi-node for inter-node networking
+	];
+	services.k3s.enable = true;
+	services.k3s.role = "server";
+	# services.k3s.extraFlags = "--cluster-cidr=10.42.0.0/16,2a10:3781:25ac:2::/64 --service-cidr=10.43.0.0/16,2a10:3781:25ac:3::/112 --flannel-iface eno1"; 
 }
