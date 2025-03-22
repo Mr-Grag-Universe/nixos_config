@@ -8,6 +8,10 @@
 			url = "github:nix-community/home-manager/release-24.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		stylix = {
+			url = "github:danth/stylix/release-24.11";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }@inputs: let
