@@ -14,5 +14,17 @@
 		# (pkgs.writeShellScriptBin "my-hello" ''
 		#   echo "Hello, ${config.home.username}!"
 		# '')
+		
+		neofetch
+		telegram-desktop
+
+		# CLI
+		bottom
+		htop
+		unzip
+		wget
+		zsh
+		zip
+		neovim
 	];
 }

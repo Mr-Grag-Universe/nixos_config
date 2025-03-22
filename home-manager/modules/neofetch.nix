@@ -1,0 +1,3 @@
+{
+	programs.neofetch.enable = true;
+}

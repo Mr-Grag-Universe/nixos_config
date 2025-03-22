@@ -99,6 +99,17 @@
   #  wget
     vim
     git
+	(wrapHelm kubernetes-helm {
+		plugins = with pkgs.kubernetes-helmPlugins; [
+			helm-secrets
+			helm-diff
+			helm-s3
+			helm-git
+			helm-dashboard
+		];
+	})
+	helm-dashboard 
+	kubectl
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -129,9 +140,14 @@
   system.stateVersion = stateVersion; # Did you read the comment?
 
 	networking.firewall.allowedTCPPorts = [
+		8080
 		6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
-		# 2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
-		# 2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
+		2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
+		2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
+		10250
+		10259
+		10257
+		10250
 	];
 	networking.firewall.allowedUDPPorts = [
 		# 8472 # k3s, flannel: required if using multi-node for inter-node networking
