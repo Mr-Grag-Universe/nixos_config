@@ -26,5 +26,6 @@
 		zsh
 		zip
 		neovim
+		thefuck
 	];
 }

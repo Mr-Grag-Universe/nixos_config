@@ -73,14 +73,15 @@
   # services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.stepan = {
-    isNormalUser = true;
-    description = "Stepan";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
+  # users.users.stepan = {
+  #   isNormalUser = true;
+  #   description = "Stepan";
+  #   extraGroups = [ "networkmanager" "wheel" ];
+  #   packages = with pkgs; [
+  #   #  thunderbird
+  #   ];
+  # };
+  # users.defaultUserShell = pkgs.zsh;
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;

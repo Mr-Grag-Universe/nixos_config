@@ -1,4 +1,4 @@
-{ homeStateVersion, user, ... } :
+{ pkgs, homeStateVersion, user, ... } :
 
 {
 	imports = [
@@ -9,6 +9,7 @@
   home.username = user;
   home.homeDirectory = "/home/${user}";
   home.stateVersion = homeStateVersion; # Please read the comment before changing.
+  # users.users.${user}.shell = pkgs.zsh;
 
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
