@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-	# nixpkgs.config.allowUnfree = true;
+	nixpkgs.config.allowUnfree = true;
 
 	home.packages = with pkgs; [
 		# # It is sometimes useful to fine-tune packages, for example, by applying
@@ -17,6 +17,7 @@
 		
 		neofetch
 		telegram-desktop
+		obsidian
 
 		# CLI
 		bottom
@@ -27,5 +28,15 @@
 		zip
 		neovim
 		thefuck
+
+		# Python
+		(python312.withPackages (ppkgs: [
+			ppkgs.numpy
+			ppkgs.pandas
+			ppkgs.scapy
+		]))
+
+		# DevOps
+		# docker
 	];
 }

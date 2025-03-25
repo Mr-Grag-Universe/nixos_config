@@ -91,7 +91,7 @@
   programs.firefox.enable = true;
 
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -111,7 +111,10 @@
 	})
 	helm-dashboard 
 	kubectl
+	# docker
   ];
+  # virtualisation.docker.enable = true;
+
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
