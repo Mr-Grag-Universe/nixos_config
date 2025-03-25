@@ -37,6 +37,5 @@
 		]))
 
 		# DevOps
-		# docker
 	];
 }
