@@ -34,8 +34,14 @@
 			ppkgs.numpy
 			ppkgs.pandas
 			ppkgs.scapy
-		]))
+			ppkgs.pip
+		])).override (args: {
+			postInstall = ''
+			$out/bin/pip install cyclonedx-python
+			'';
+		})
 
 		# DevOps
+		# vagrant
 	];
 }

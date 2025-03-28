@@ -1,18 +1,15 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 # { config, pkgs, ... }:
 { pkgs, stateVersion, hostname, ... }:
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-	../../nixos/modules
-    ];
+	imports = [
+		./hardware-configuration.nix
+		./local-packages.nix
+		../../nixos/modules
+	];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  networking.hostName = hostname; # Define your hostname.
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+	networking.hostName = hostname; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -72,17 +69,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.stepan = {
-  #   isNormalUser = true;
-  #   description = "Stepan";
-  #   extraGroups = [ "networkmanager" "wheel" ];
-  #   packages = with pkgs; [
-  #   #  thunderbird
-  #   ];
-  # };
-  # users.defaultUserShell = pkgs.zsh;
-
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
   services.xserver.displayManager.autoLogin.user = "stepan";
@@ -95,24 +81,7 @@
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-    vim
-    git
-	(wrapHelm kubernetes-helm {
-		plugins = with pkgs.kubernetes-helmPlugins; [
-			helm-secrets
-			helm-diff
-			helm-s3
-			helm-git
-			helm-dashboard
-		];
-	})
-	helm-dashboard 
-	kubectl
-	# docker
-  ];
+
   virtualisation.docker.enable = true;
 
 
@@ -145,6 +114,7 @@
 
 	networking.firewall.allowedTCPPorts = [
 		8080
+		8081
 		6443 # k3s: required so that pods can reach the API server (running on port 6443 by default)
 		2379 # k3s, etcd clients: required if using a "High Availability Embedded etcd" configuration
 		2380 # k3s, etcd peers: required if using a "High Availability Embedded etcd" configuration
