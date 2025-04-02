@@ -1,6 +1,7 @@
 { pkgs, ... }: {
 	environment.systemPackages = with pkgs; [
 		gcc
+		bash
 		kdenlive
 		vim
 		git
@@ -15,7 +16,11 @@
 		})
 		helm-dashboard 
 		kubectl
-		# vagrant
+		gitlab
+		gitlab-runner
+		tor
+		torctl
+		vagrant
 		# docker
 		# jetbrains.pycharm-professional
 		# jre8

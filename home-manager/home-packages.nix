@@ -28,6 +28,7 @@
 		zip
 		neovim
 		thefuck
+		# torctl
 
 		# Python
 		(python312.withPackages (ppkgs: [
@@ -35,13 +36,15 @@
 			ppkgs.pandas
 			ppkgs.scapy
 			ppkgs.pip
-		])).override (args: {
-			postInstall = ''
-			$out/bin/pip install cyclonedx-python
-			'';
-		})
+			# ppkgs.cyclonedx-bom
+		]))# .override (args: {
+		# 	postInstall = ''
+		# 	$out/bin/pip install cyclonedx-bom
+		# 	'';
+		# })
 
 		# DevOps
 		# vagrant
+		openjdk
 	];
 }
