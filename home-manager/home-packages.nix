@@ -29,6 +29,7 @@
 		neovim
 		thefuck
 		# torctl
+		tree
 
 		# Python
 		(python312.withPackages (ppkgs: [

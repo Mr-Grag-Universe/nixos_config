@@ -21,6 +21,7 @@
 		tor
 		torctl
 		vagrant
+		gparted
 		# docker
 		# jetbrains.pycharm-professional
 		# jre8
