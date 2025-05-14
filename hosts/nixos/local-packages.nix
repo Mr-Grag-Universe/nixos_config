@@ -22,6 +22,7 @@
 		torctl
 		vagrant
 		gparted
+		qbittorrent
 		# docker
 		# jetbrains.pycharm-professional
 		# jre8

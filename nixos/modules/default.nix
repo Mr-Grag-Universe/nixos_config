@@ -10,5 +10,8 @@
 		./swap.nix
 		./timezone.nix
 		./tor.nix
+
+		# hardware
+		./bluetooth.nix
 	];
 }

@@ -18,6 +18,9 @@
 		neofetch
 		telegram-desktop
 		obsidian
+		vscode
+		rtorrent
+		flood
 
 		# CLI
 		bottom
