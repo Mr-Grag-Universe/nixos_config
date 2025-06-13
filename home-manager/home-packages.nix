@@ -49,12 +49,7 @@
 			pip
 			requests
 			ipykernel
-			# ppkgs.cyclonedx-bom
-		]))# .override (args: {
-		# 	postInstall = ''
-		# 	$out/bin/pip install cyclonedx-bom
-		# 	'';
-		# })
+		]))
 
 		# DevOps
 		# vagrant

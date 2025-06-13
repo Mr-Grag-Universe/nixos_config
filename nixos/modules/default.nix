@@ -10,6 +10,7 @@
 		./swap.nix
 		./timezone.nix
 		./tor.nix
+		./hyprland.nix
 
 		# hardware
 		./bluetooth.nix

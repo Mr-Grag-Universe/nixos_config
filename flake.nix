@@ -12,6 +12,10 @@
 			url = "github:danth/stylix/release-24.11";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+		hyprland = {
+			url = "github:hyprwm/Hyprland";
+			# inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
 	outputs = { self, nixpkgs, home-manager, ... }@inputs: let
