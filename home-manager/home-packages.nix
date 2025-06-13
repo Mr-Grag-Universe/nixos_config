@@ -19,8 +19,14 @@
 		telegram-desktop
 		obsidian
 		vscode
-		rtorrent
-		flood
+		# rtorrent
+		# flood
+		okular
+
+		# LibreOffice
+		libreoffice-qt
+		hunspell
+		hunspellDicts.ru_RU
 
 		# CLI
 		bottom
@@ -35,11 +41,14 @@
 		tree
 
 		# Python
-		(python312.withPackages (ppkgs: [
-			ppkgs.numpy
-			ppkgs.pandas
-			ppkgs.scapy
-			ppkgs.pip
+		(python312.withPackages (ppkgs: with ppkgs; [
+			numpy
+			pandas
+			seaborn
+			scapy
+			pip
+			requests
+			ipykernel
 			# ppkgs.cyclonedx-bom
 		]))# .override (args: {
 		# 	postInstall = ''

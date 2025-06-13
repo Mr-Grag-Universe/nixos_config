@@ -1,7 +1,7 @@
 { pkgs, ... } :
 {
 	services.gitlab = {
-		enable = true;
+		enable = false;
 		databasePasswordFile = pkgs.writeText "dbPassword" "zgvcyfwsxzcwr85l";
 		initialRootPasswordFile = pkgs.writeText "rootPassword" "dakqdvp4ovhksxer";
 		secrets = {
