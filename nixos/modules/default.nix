@@ -11,6 +11,7 @@
 		./timezone.nix
 		./tor.nix
 		./hyprland.nix
+		./env.nix
 
 		# hardware
 		./bluetooth.nix

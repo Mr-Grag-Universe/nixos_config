@@ -34,17 +34,54 @@
     LC_TIME = "ru_RU.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    # Enable the X11 windowing system.
+    enable = true;
 
-  # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+    videoDrivers = [ "amdgpu" ];
+  
+    displayManager = {
+      # Enable the XFCE Desktop Environment.
+      lightdm.enable = false;
+      gdm = {
+        enable = true;
+        wayland = true;
+      };
+      
+      # Enable automatic login for the user.
+      autoLogin.enable = false;
+      autoLogin.user = "stepan";
+    };
+    desktopManager.xfce.enable = true;
+  
+    # Configure keymap in X11
+    xkb = {
+      layout = "ru";
+      variant = "";
+    };
+  
+    # Enable touchpad support (enabled default in most desktopManager).
+    # libinput.enable = true;
+  };
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "ru";
-    variant = "";
+  # programs.hyprland.enable = true;
+
+  hardware.graphics = {
+    enable = true;
+    # driSupport = true;
+    extraPackages = with pkgs; [
+      mesa.drivers
+      libvdpau-va-gl
+      vaapiVdpau
+    ];
+
+    # setLdLibraryPath = true;
+  };
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "radeonsi";
+    GBM_BACKEND = "drm";
+    __GLX_VENDOR_LIBRARY_NAME = "mesa";
   };
 
   # Enable CUPS to print documents.
@@ -65,13 +102,6 @@
     # no need to redefine it in your config for now)
     #media-session.enable = true;
   };
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
-
-  # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "stepan";
 
   # Install firefox.
   programs.firefox.enable = true;

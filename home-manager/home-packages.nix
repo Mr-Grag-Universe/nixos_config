@@ -39,6 +39,7 @@
 		thefuck
 		# torctl
 		tree
+		kitty
 
 		# Python
 		(python312.withPackages (ppkgs: with ppkgs; [
@@ -54,5 +55,23 @@
 		# DevOps
 		# vagrant
 		openjdk
+
+		polkit
+		hyprland-protocols
+		hyprlang
+		hyprutils
+		hyprwayland-scanner
+		libdrm
+		# libpipewire
+		# libspa
+		sdbus-cpp
+		# wayland-client
+		# wayland-protocol
+		gdm
+		xdg-desktop-portal-hyprland
+		xdg-desktop-portal-gtk
+		libnotify
+		dconf
+		xwayland
 	];
 }
