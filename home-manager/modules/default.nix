@@ -5,6 +5,6 @@
 		# ./rtorrent.nix
 		./zsh.nix
 		./stylix.nix
-		# ./hyprland.nix
+		./hyprland
 	];
 }

@@ -56,6 +56,7 @@
 		# vagrant
 		openjdk
 
+		# hyprland
 		polkit
 		hyprland-protocols
 		hyprlang
@@ -73,5 +74,8 @@
 		libnotify
 		dconf
 		xwayland
+		hyprpaper
+		hyprlock
+		hypridle
 	];
 }
