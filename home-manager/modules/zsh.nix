@@ -27,7 +27,7 @@
 		oh-my-zsh = {
 			enable = true;
 			plugins = [ "git" "thefuck" ];
-			theme = "robbyrussell";
+			theme = "robbyrussell"; # "avit";
 		};
 		
 		plugins = [

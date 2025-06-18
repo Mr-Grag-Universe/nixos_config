@@ -22,6 +22,7 @@
 		# rtorrent
 		# flood
 		okular
+		gedit
 
 		# LibreOffice
 		libreoffice-qt
@@ -31,6 +32,7 @@
 		# CLI
 		bottom
 		htop
+		btop
 		unzip
 		wget
 		zsh
@@ -40,6 +42,7 @@
 		# torctl
 		tree
 		kitty
+		brightnessctl
 
 		# Python
 		(python312.withPackages (ppkgs: with ppkgs; [
@@ -77,5 +80,8 @@
 		hyprpaper
 		hyprlock
 		hypridle
+
+		rofi
+		wofi
 	];
 }

@@ -4,6 +4,7 @@
 		./git.nix
 		# ./rtorrent.nix
 		./zsh.nix
+		./kitty.nix
 		./stylix.nix
 		./hyprland
 	];

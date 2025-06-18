@@ -4,5 +4,6 @@
 		./hyprland.nix
 		./hyprpaper.nix
 		./waybar
+		./wofi
 	];
 }

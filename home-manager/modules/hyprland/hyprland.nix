@@ -18,6 +18,13 @@
 				"QT_QPA_PLATFORM,wayland"
 				"XDG_SCREENSHOTS_DIR,$HOME/screens"
 			];
+			exec = [
+				"systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+				"dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+				# boot waybar
+				"pkill waybar & sleep 0.5 && waybar"
+			];
+
 			monitor = ",1920x1080@60,auto,1";
 
 			input = {
@@ -60,6 +67,14 @@
 				animate_mouse_windowdragging = false;
 				enable_swallow = true;
 				new_window_takes_over_fullscreen = 2;
+			};
+
+			decoration = {
+				rounding = 8;
+				# blur = 0;
+				# drop_shadow = 0;
+				# shadow_range = 60;
+				# col.shadow = "0x66000000";
 			};
 		};
 	};
