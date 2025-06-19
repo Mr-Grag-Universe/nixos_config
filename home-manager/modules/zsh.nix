@@ -35,6 +35,8 @@
 				name = "powerlevel10k";
 				src = pkgs.zsh-powerlevel10k;
 				file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
+				# src = lib.cleanSource ./p10k-config;
+				# file = "grovbox.zsh";
 			}
 			{
 				name = "powerlevel10k-config";
@@ -48,6 +50,8 @@
 			POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 			source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 			test -f ~/.config/zsh/.p10k.zsh && source ~/.config/zsh/.p10k.zsh
+			ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#87875F"
+			# #E7D7AD"
 			# source ~/.p10k.zsh
 		'';
 	};

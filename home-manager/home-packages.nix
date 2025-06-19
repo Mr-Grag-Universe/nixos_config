@@ -43,6 +43,9 @@
 		tree
 		kitty
 		brightnessctl
+		playerctl
+		pamixer
+		grimblast
 
 		# Python
 		(python312.withPackages (ppkgs: with ppkgs; [
