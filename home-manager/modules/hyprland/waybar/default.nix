@@ -31,7 +31,7 @@
                }
                window#waybar {
                  background-color: #282828;
-		 opacity : 0.7;
+		 opacity : 1.;
                }
                window > box {
                  margin-left: 5px;
@@ -193,14 +193,14 @@
           "tooltip-format"= "{=%A; %d %B %Y}\n<tt>{calendar}</tt>";
         };
         "memory" = {
-          "interval" = 1;
+          "interval" = 2;
           "format" = "󰻠 {percentage}%";
           "states" = {
             "warning" = 85;
           };
         };
         "cpu" = {
-          "interval" = 1;
+          "interval" = 2;
           "format" = "󰍛 {usage}%";
         };
         "mpd" = {

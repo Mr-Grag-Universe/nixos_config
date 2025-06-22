@@ -1,9 +1,10 @@
-{ pkgs, homeStateVersion, user, ... } :
+{ pkgs, homeStateVersion, user, nixvim, ... } :
 
 {
 	imports = [
 		./modules
 		./home-packages.nix
+        nixvim.homeManagerModules.nixvim
 	];
 
   home.username = user;

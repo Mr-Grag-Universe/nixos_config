@@ -1,6 +1,6 @@
 {
 	services.tor = {
-		enable = true;
+		enable = false;
 		openFirewall = true;
 		enableGeoIP = false;
 

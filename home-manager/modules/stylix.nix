@@ -11,7 +11,9 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    # (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.symbols-only
+    nerd-fonts.droid-sans-mono
   ];
 
   stylix = {
@@ -21,6 +23,7 @@
 
     targets = {
       neovim.enable = false;
+      nixvim.enable = false;
       waybar.enable = false;
       wofi.enable = false;
       hyprland.enable = false;

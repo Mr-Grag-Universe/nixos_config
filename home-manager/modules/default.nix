@@ -8,6 +8,7 @@
 		./stylix.nix
 		./hyprland
 
-		./nvim
+		# ./nvim
+        	./nixvim
 	];
 }

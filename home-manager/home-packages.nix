@@ -21,7 +21,7 @@
     vscode
     # rtorrent
     # flood
-    okular
+    kdePackages.okular
     gedit
 
     # LibreOffice

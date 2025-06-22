@@ -2,14 +2,14 @@
 	description = "My system configuration";
 
 	inputs = {
-		nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+		nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
 		
 		home-manager = {
-			url = "github:nix-community/home-manager/release-24.11";
+			url = "github:nix-community/home-manager/release-25.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		stylix = {
-			url = "github:danth/stylix/release-24.11";
+			url = "github:danth/stylix/release-25.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
 		hyprland = {
@@ -30,12 +30,12 @@
 	};
 
 	outputs = { self, nixpkgs, home-manager, 
-                neovim-config, nil, nixvim, ... }@inputs: let
+                nil, nixvim, ... }@inputs: let
 		system = "x86_64-linux";
-		homeStateVersion = "24.11";
+		homeStateVersion = "25.05";
 		user = "stepan";
 		hosts = [
-			{ hostname = "nixos"; stateVersion = "24.11"; }
+			{ hostname = "nixos"; stateVersion = "25.05"; }
 		];
 
 		makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
@@ -66,10 +66,9 @@
 
 		homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.${system};
-			extraSpecialArgs = { inherit inputs homeStateVersion user; inherit nixvim; };
+			extraSpecialArgs = { inherit inputs homeStateVersion user nixvim; };
 			modules = [ 
 				./home-manager/home.nix 
-                nixvim.homeManagerModules.nixvim
 			];
 		};
 	};

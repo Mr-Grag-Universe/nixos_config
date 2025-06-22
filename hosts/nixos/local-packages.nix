@@ -2,7 +2,7 @@
 	environment.systemPackages = with pkgs; [
 		gcc
 		bash
-		kdenlive
+		kdePackages.kdenlive
 		vim
 		git
 		(wrapHelm kubernetes-helm {
