@@ -7,6 +7,7 @@
   imports = [
     ./base16.nix
     ./catppuccin.nix
+    ./gruvbox.nix
     ./rose-pine.nix
   ];
 
@@ -16,6 +17,7 @@
   config = lib.mkIf config.themes.enable {
     base16.enable = lib.mkDefault false;
     catppuccin.enable = lib.mkDefault false;
+    gruvbox.enable = lib.mkDefault false;
     rose-pine.enable = lib.mkDefault true;
   };
 }
