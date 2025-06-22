@@ -7,5 +7,7 @@
 		./kitty.nix
 		./stylix.nix
 		./hyprland
+
+		./nvim
 	];
 }

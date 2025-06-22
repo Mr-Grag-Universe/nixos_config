@@ -28,7 +28,8 @@
 			monitor = ",1920x1080@60,auto,1";
 
 			input = {
-				kb_layout = "us";
+				kb_layout = "us,ru";
+				kb_options= "grp:win_space_toggle";
 				# kb_variant = 
 				follow_mouse = 1; # 0-4
 				scroll_method = "2fg";

@@ -18,7 +18,14 @@
 			", XF86MonBrightnessDown, exec, brightnessctl s 5%-"
 
 			# Screenshots
-			", Print, exec, grimblast --notify copysave screen"
+			"         , Print, exec, grimblast --notify copysave screen"
+			"SUPER    , Print, exec, grimblast --notify copysave active"
+			"SUPER ALT, Print, exec, grimblast --notify copysave area"
+
+			# app launcher
+			"$mainMod, F, exec, wofi --show drun"
+			# keyboard switching
+			"SUPER,SPACE,exec,kb_switcher switch"
 
 			"SUPER,Tab,cyclenext,"
 			"SUPER,Tab,bringactivetotop,"

@@ -16,9 +16,21 @@
 			url = "github:hyprwm/Hyprland";
 			# inputs.nixpkgs.follows = "nixpkgs";
 		};
+		neovim-config = {
+			url = "github:Gako358/neovim";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
+        nil = {
+            url = "github:oxalica/nil";
+        };
+        nixvim = {
+            url = "github:nix-community/nixvim";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+	outputs = { self, nixpkgs, home-manager, 
+                neovim-config, nil, nixvim, ... }@inputs: let
 		system = "x86_64-linux";
 		homeStateVersion = "24.11";
 		user = "stepan";
@@ -34,7 +46,16 @@
 
 			modules = [
 				./hosts/${hostname}/configuration.nix
-			];
+                home-manager.nixosModules.home-manager
+                # {
+                #     home-manager.useGlobalPkgs = true;
+                #     home-manager.useUserPackages = true
+                #     home-manager.sharedModules = [
+                #         nixvim.homeManagerModules.nixvim
+                #     ];
+                #     home-manager.users.user = ./user.nix;
+                # }
+            ];
 		};
 
 	in {
@@ -45,8 +66,11 @@
 
 		homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
 			pkgs = nixpkgs.legacyPackages.${system};
-			extraSpecialArgs = { inherit inputs homeStateVersion user; };
-			modules = [ ./home-manager/home.nix ];
+			extraSpecialArgs = { inherit inputs homeStateVersion user; inherit nixvim; };
+			modules = [ 
+				./home-manager/home.nix 
+                nixvim.homeManagerModules.nixvim
+			];
 		};
 	};
 }
