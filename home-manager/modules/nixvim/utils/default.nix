@@ -17,7 +17,7 @@
     # ./nvim-surround.nix
     # ./nvterm.nix
     # ./oil.nix
-    # ./persistence.nix
+    ./persistence.nix
     ./plenary.nix
     # ./project-nvim.nix
     # ./sidebar.nix
@@ -46,7 +46,7 @@
     # nvim-surround.enable = lib.mkDefault true;
     # nvterm.enable = lib.mkDefault true;
     # oil.enable = lib.mkDefault true;
-    # persistence.enable = lib.mkDefault true;
+    persistence.enable = lib.mkDefault true;
     plenary.enable = lib.mkDefault true;
     # project-nvim.enable = lib.mkDefault true;
     # sidebar.enable = lib.mkDefault false;
