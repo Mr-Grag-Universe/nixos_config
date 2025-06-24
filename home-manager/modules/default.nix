@@ -7,6 +7,7 @@
 		./kitty.nix
 		./stylix.nix
 		./hyprland
+		# ./vpn.nix
 
 		# ./nvim
         	./nixvim

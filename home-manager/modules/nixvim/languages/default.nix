@@ -9,6 +9,7 @@
     ./lsp-nvim.nix
     ./lspsaga.nix
     ./treesitter-nvim.nix
+    ./trouble.nix
     # ./nvim-jdtls.nix
     # ./nvim-lint.nix
   ];
@@ -21,6 +22,7 @@
     lspsaga.enable = lib.mkDefault true;
     lsp-nvim.enable = lib.mkDefault true;
     treesitter-nvim.enable = lib.mkDefault true;
+    trouble.enable = lib.mkDefault true;
     # nvim-jdtls.enable = lib.mkDefault true;
     # nvim-lint.enable = lib.mkDefault true;
   };

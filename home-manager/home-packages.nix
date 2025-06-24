@@ -16,6 +16,8 @@
     # '')
 
     neofetch
+    fastfetch
+    nerdfetch
     telegram-desktop
     obsidian
     vscode
@@ -28,6 +30,12 @@
     libreoffice-qt
     hunspell
     hunspellDicts.ru_RU
+
+    # vpn
+    # mullvad-vpn
+    # mullvad-closest
+    # mullvad-browser
+    tor-browser
 
     # CLI
     bottom
