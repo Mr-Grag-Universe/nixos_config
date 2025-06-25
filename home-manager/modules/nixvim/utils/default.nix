@@ -9,26 +9,26 @@
     ./cloak.nix # для запикивания .env переменных
     ./colorizer.nix # для визуализации hex-цветов
     # ./harpoon.nix
-    ./markdown-preview.nix
-    ./mini.nix
+    ./markdown-preview.nix # open .md files in firefox (or in another browser)
+    ./mini.nix # dependency
     # ./neocord.nix
     # ./neotest.nix
     ./nvim-autopairs.nix
     ./nvim-surround.nix
-    ./nvterm.nix
+    ./nvterm.nix # Neve terminal
     # ./oil.nix
-    ./persistence.nix
-    ./plenary.nix
-    ./project-nvim.nix
+    ./persistence.nix # for session restorage
+    ./plenary.nix # dependency
+    ./project-nvim.nix # for last folders memory
     # ./sidebar.nix
     # ./tmux-navigator.nix
-    ./todo-comments.nix
+    ./todo-comments.nix # for cool colorized todo and other comments messages
     # ./ultimate-autopair.nix
-    ./undotree.nix
-    ./vim-floaterm.nix
-    ./wakatime.nix
+    ./undotree.nix # for git-like undo tree
+    ./vim-floaterm.nix # for terminal
+    ./wakatime.nix # for programming statistics (useless, but shiny)
     # ./which-key.nix
-    ./wilder.nix
+    ./wilder.nix # for vim :xxx command nicer interface
   ];
 
   options = {

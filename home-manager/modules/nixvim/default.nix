@@ -13,6 +13,7 @@
 		./themes
 		./ui
 		./utils
+		./binds.nix
 	];
 
 	plugins.lualine.enable = true;
