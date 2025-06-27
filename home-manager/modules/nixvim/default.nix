@@ -8,6 +8,7 @@
 	imports = [
 		./filetrees
 		./git
+		./images
 		./languages
 		./telescope
 		./themes
@@ -24,6 +25,7 @@
 
 	filetrees.enable = lib.mkDefault true;
 	git.enable = lib.mkDefault true;
+	images.enable = lib.mkDefault true;
 	languages.enable = lib.mkDefault true;
 	themes.enable = lib.mkDefault true;
 	telescope.enable = lib.mkDefault true;

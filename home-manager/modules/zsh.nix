@@ -46,7 +46,7 @@
 		];
 
 		dotDir = ".config/zsh";
-		initExtra = ''
+		initContent = ''
 			POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 			source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 			test -f ~/.config/zsh/.p10k.zsh && source ~/.config/zsh/.p10k.zsh

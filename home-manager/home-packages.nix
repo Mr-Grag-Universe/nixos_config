@@ -100,5 +100,6 @@
     # nixvim.homeManagerModules.nixvim
     pyright
     nil
+    imagemagick
   ];
 }
