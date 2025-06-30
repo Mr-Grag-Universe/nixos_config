@@ -18,6 +18,7 @@
     neofetch
     fastfetch
     nerdfetch
+    microfetch
     telegram-desktop
     obsidian
     vscode
