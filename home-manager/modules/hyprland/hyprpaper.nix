@@ -4,8 +4,8 @@
 	services.hyprpaper = {
 		enable = true;
 		settings = {
-			preload = [ "~/nix/wallpapers/dragon.jpg" ];
-			wallpaper = lib.mkForce ",~/nix/wallpapers/dragon.jpg";
+			preload = [ "~/nix/assets/wallpapers/dragon.jpg" ];
+			wallpaper = lib.mkForce ",~/nix/assets/wallpapers/dragon.jpg";
 		};
 	};
 }

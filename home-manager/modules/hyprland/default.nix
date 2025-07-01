@@ -8,7 +8,7 @@
 		./mako.nix
 		./swaylock.nix
 		./waybar
-		./wlogout.nix
+		./wlogout
 		./wofi
 	];
 }

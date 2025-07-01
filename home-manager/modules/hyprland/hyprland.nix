@@ -77,6 +77,10 @@
 				# shadow_range = 60;
 				# col.shadow = "0x66000000";
 			};
+
+			layerrule = [
+				"blur, logout_dialog"
+			];
 		};
 	};
 }

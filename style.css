@@ -1,0 +1,126 @@
+			/*# Получение разрешения экрана и коэффициента масштабирования
+screen_width=$(hyprctl -j monitors | jq '.[] | select(.focused==true) | .width')
+screen_height=$(hyprctl -j monitors | jq '.[] | select(.focused==true) | .height')
+scale_factor=$(hyprctl -j monitors | jq '.[] | select(.focused == true) | .scale' | sed 's/\.//')
+
+# Проверка аргумента для выбора стиля
+style_index="${1:-1}"  # По умолчанию 1, если не указан
+
+# Определение переменных в зависимости от выбранного стиля
+case "${style_index}" in
+    1)
+        button_columns=3
+        x_margin=$((screen_width * 32 / scale_factor))
+        y_margin=$((screen_height * 28 / scale_factor))
+        border_rad=$((screen_height / scale_factor / 3))
+        ;;
+    2)
+        button_columns=2
+        x_margin=$((screen_width * 38 / scale_factor))
+        y_margin=$((screen_height * 28 / scale_factor))
+        border_rad=$((screen_height / scale_factor / 3))
+        ;;
+    *)
+        echo "Неверный индекс стиля. Используйте 1 или 2."
+        exit 1
+        ;;
+esac
+
+echo "button_columns=${button_columns}"
+echo "x_margin=${x_margin}"
+echo "y_margin=${y_margin}"
+echo "border_rad=${border_rad}"
+
+ 1*/
+			@define-color foreground #ece2cf;
+@define-color background #211f0e;
+@define-color cursor #ece2cf;
+
+@define-color color0 #211f0e;
+@define-color color1 #AB956D;
+@define-color color2 #C4A77C;
+@define-color color3 #B9A489;
+@define-color color4 #C9B390;
+@define-color color5 #D3B79A;
+@define-color color6 #E0CCA5;
+@define-color color7 #ece2cf;
+@define-color color8 #a59e90;
+@define-color color9 #AB956D;
+@define-color color10 #C4A77C;
+@define-color color11 #B9A489;
+@define-color color12 #C9B390;
+@define-color color13 #D3B79A;
+@define-color color14 #E0CCA5;
+@define-color color15 #ece2cf;
+
+
+			window {
+    font-family: Fira Code Medium;
+    font-size: 16pt;
+    color:  @foreground; /* text */
+    background-color: rgba(24, 27, 32, 0.2);
+
+} 
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    background-color: transparent;
+    animation: gradient_f 20s ease-in infinite;
+    transition: all 0.3s ease-in;
+    box-shadow: 0 0 10px 2px transparent;
+    border-radius: 36px;
+    margin: 10px;
+}
+
+button:focus {
+    box-shadow: none;
+    background-size : 20%;
+}
+
+button:hover {
+    background-size: 50%;
+    box-shadow: 0 0 10px 3px rgba(0,0,0,.4);
+    background-color: @color6;
+    color: transparent;
+    transition: all 0.3s cubic-bezier(.55, 0.0, .28, 1.682), box-shadow 0.5s ease-in;
+}
+
+#shutdown {
+    background-image: url("./assets/wlogout/icons_nova/power.png");
+}
+#shutdown:hover {
+  background-image: image(url("/home/stepan/nix/assets/wlogout/icons_nova/power-hover.png"));
+}
+
+#logout {
+    background-image: url("./assets/wlogout/icons_nova/logout.png");
+
+}
+#logout:hover {
+  background-image: url("~/nix/assets/wlogout/icons_nova/logout-hover.png");
+}
+
+#reboot {
+    background-image: image(url("~/nix/assets/wlogout/icons_nova/restart.png"));
+}
+#reboot:hover {
+  background-image: image(url("~/nix/assets/wlogout/icons_nova/restart-hover.png"));
+}
+
+#lock {
+    background-image: image(url("~/nix/assets/wlogout/icons_nova/lock.png"));
+}
+#lock:hover {
+  background-image: image(url("~/nix/assets/wlogout/icons_nova/lock-hover.png"));
+}
+
+#hibernate {
+    background-image: image(url("~/nix/assets/wlogout/icons_nova/hibernate.png"));
+}
+#hibernate:hover {
+  background-image: image(url("~/nix/assets/wlogout/icons_nova/hibernate-hover.png"));
+}
+
+		

@@ -54,6 +54,8 @@
     playerctl
     pamixer
     grimblast
+    jq
+    pywal
 
     # Python
     (python312.withPackages (ppkgs:
