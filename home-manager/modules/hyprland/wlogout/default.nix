@@ -15,19 +15,19 @@ in
 		layout = [
 {
   "label"=            "lock";
-  "action"=           "hyprlock";
+  "action"=           "hyprlock --immediate";
   "text"=             "Lock";
   "keybind"=          "l";
 }
 {
   "label"=            "logout";
-  "action"=           "loginctl terminate-user ''";
+  "action"=           "hyprctl dispatch exit"; # "loginctl terminate-user $USER";
   "text"=             "Logout";
   "keybind"=          "e";
 }
 {
   "label"=            "suspend";
-  "action"=           "swaylock -f && systemctl suspend";
+  "action"=           "hyprlock --immediate && systemctl suspend-then-hibernate";
   "text"=             "Suspend";
   "keybind"=          "u";
 }

@@ -28,7 +28,7 @@
         autoEnableSources = false;
         settings = {
           experimental = {
-            ghost_text = true;
+            ghost_text = false;
           };
           mapping = {
             "<C-j>" = "cmp.mapping.select_next_item()";

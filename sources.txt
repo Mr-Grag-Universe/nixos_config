@@ -1,0 +1,27 @@
+https://github.com/egnrse/configs
+	+ wlogout
+https://github.com/zDyant/HyprNova
+	+ wlogout
+https://github.com/dylanaraps/pywal
+	+ утилита для настройки темы
+	  надо сделать wal -i path/to/image.png
+	  и получить css с цветами в папке $HOME/.cache/wall
+
+https://github.com/Andrey0189/nixos-config-reborn
+- кофиг основа всего!
+
+https://github.com/XNM1/linux-nixos-hyprland-config-dotfiles
+- много чего тут подрезал
+
+https://www.rapidtables.com/web/color/RGB_Color.html
+- RGB colors picker
+https://www.rapidtables.com/convert/number/decimal-to-hex.html?x=76
+- hex-dec-oct-bin convertor
+
+https://github.com/adi1090x/rofi
+- ideas for wlogout format
+
+https://github.com/HeinzDev/Hyprland-dotfiles
+- много чего спёр. в основном waybar
+
+
