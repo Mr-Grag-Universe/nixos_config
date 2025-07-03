@@ -2,6 +2,7 @@ https://github.com/egnrse/configs
 	+ wlogout
 https://github.com/zDyant/HyprNova
 	+ wlogout
+	+ hyprlock
 https://github.com/dylanaraps/pywal
 	+ утилита для настройки темы
 	  надо сделать wal -i path/to/image.png
