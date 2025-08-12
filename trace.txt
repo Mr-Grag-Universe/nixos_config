@@ -1,0 +1,665 @@
+warning: Git tree '/home/stepan/nix' is dirty
+warning: Git tree '/home/stepan/nix' is dirty
+warning: Git tree '/home/stepan/nix' is dirty
+warning: Git tree '/home/stepan/nix' is dirty
+error:
+       … from call site
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:57:16:
+           56|     let
+           57|       module = moduleChecks rawModule;
+             |                ^
+           58|     in
+
+       … while calling 'moduleChecks'
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:39:5:
+           38|   moduleChecks =
+           39|     raw:
+             |     ^
+           40|     showWarnings (
+
+       … from call site
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:40:5:
+           39|     raw:
+           40|     showWarnings (
+             |     ^
+           41|       let
+
+       … while calling 'showWarnings'
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:17:5:
+           16|   showWarnings =
+           17|     res:
+             |     ^
+           18|     let
+
+       … from call site
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:21:5:
+           20|     in
+           21|     lib.fold f res res.config.warnings;
+             |     ^
+           22|
+
+       … while calling 'foldr'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/lists.nix:139:14:
+          138|   foldr =
+          139|     op: nul: list:
+             |              ^
+          140|     let
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/lists.nix:144:5:
+          143|     in
+          144|     fold' 0;
+             |     ^
+          145|
+
+       … while calling 'fold''
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/lists.nix:142:15:
+          141|       len = length list;
+          142|       fold' = n: if n == len then nul else op (elemAt list n) (fold' (n + 1));
+             |               ^
+          143|     in
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/lists.nix:142:18:
+          141|       len = length list;
+          142|       fold' = n: if n == len then nul else op (elemAt list n) (fold' (n + 1));
+             |                  ^
+          143|     in
+
+       … while calling the 'length' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/lists.nix:141:13:
+          140|     let
+          141|       len = length list;
+             |             ^
+          142|       fold' = n: if n == len then nul else op (elemAt list n) (fold' (n + 1));
+
+       … while evaluating a branch condition
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:45:7:
+           44|       in
+           45|       if failed == [ ] then
+             |       ^
+           46|         raw
+
+       … from call site
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:42:18:
+           41|       let
+           42|         failed = collectFailed raw.config;
+             |                  ^
+           43|         failedStr = lib.concatStringsSep "\n" (map (x: "- ${x}") failed);
+
+       … while calling 'collectFailed'
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:14:19:
+           13|
+           14|   collectFailed = cfg: map (x: x.message) (lib.filter (x: !x.assertion) cfg.assertions);
+             |                   ^
+           15|
+
+       … while calling the 'map' builtin
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:14:24:
+           13|
+           14|   collectFailed = cfg: map (x: x.message) (lib.filter (x: !x.assertion) cfg.assertions);
+             |                        ^
+           15|
+
+       … while calling the 'filter' builtin
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:14:44:
+           13|
+           14|   collectFailed = cfg: map (x: x.message) (lib.filter (x: !x.assertion) cfg.assertions);
+             |                                            ^
+           15|
+
+       … from call site
+         at /nix/store/j9vi4cb7v9g8bsvwxz2v26gxhypr1isr-source/modules/default.nix:14:73:
+           13|
+           14|   collectFailed = cfg: map (x: x.message) (lib.filter (x: !x.assertion) cfg.assertions);
+             |                                                                         ^
+           15|
+
+       … while calling anonymous lambda
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/attrsets.nix:1182:17:
+         1181|         mapAttrs (
+         1182|           name: value:
+             |                 ^
+         1183|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/attrsets.nix:1183:85:
+         1182|           name: value:
+         1183|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
+             |                                                                                     ^
+         1184|         );
+
+       … while calling anonymous lambda
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:273:71:
+          272|           # For definitions that have an associated option
+          273|           declaredConfig = mapAttrsRecursiveCond (v: !isOption v) (_: v: v.value) options;
+             |                                                                       ^
+          274|
+
+       … while evaluating the attribute 'value'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1084:7:
+         1083|     // {
+         1084|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |       ^
+         1085|       inherit (res.defsFinal') highestPrio;
+
+       … while evaluating the option `assertions':
+
+       … while evaluating the attribute 'mergedValue'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1131:5:
+         1130|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
+         1131|     mergedValue =
+             |     ^
+         1132|       if isDefined then
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1132:7:
+         1131|     mergedValue =
+         1132|       if isDefined then
+             |       ^
+         1133|         if all (def: type.check def.value) defsFinal then
+
+       … while evaluating the attribute 'values'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1125:9:
+         1124|       {
+         1125|         values = defs''';
+             |         ^
+         1126|         inherit (defs'') highestPrio;
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1119:11:
+         1118|           # Avoid sorting if we don't have to.
+         1119|           if any (def: def.value._type or "" == "order") defs''.values then
+             |           ^
+         1120|             sortProperties defs''.values
+
+       … while calling the 'any' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1119:14:
+         1118|           # Avoid sorting if we don't have to.
+         1119|           if any (def: def.value._type or "" == "order") defs''.values then
+             |              ^
+         1120|             sortProperties defs''.values
+
+       … while evaluating the attribute 'values'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1252:7:
+         1251|     {
+         1252|       values = concatMap (def: if getPrio def == highestPrio then [ (strip def) ] else [ ]) defs;
+             |       ^
+         1253|       inherit highestPrio;
+
+       … while calling the 'concatMap' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1252:16:
+         1251|     {
+         1252|       values = concatMap (def: if getPrio def == highestPrio then [ (strip def) ] else [ ]) defs;
+             |                ^
+         1253|       inherit highestPrio;
+
+       … while calling the 'concatMap' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1099:17:
+         1098|         # Process mkMerge and mkIf properties.
+         1099|         defs' = concatMap (
+             |                 ^
+         1100|           m:
+
+       … while calling anonymous lambda
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1100:11:
+         1099|         defs' = concatMap (
+         1100|           m:
+             |           ^
+         1101|           map (
+
+       … while calling the 'map' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1101:11:
+         1100|           m:
+         1101|           map (
+             |           ^
+         1102|             value:
+
+       … while evaluating definitions from `/nix/store/cya6rar29df88p1fcb4jd3x5xcc2qc7q-source/wrappers/_shared.nix':
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1110:80:
+         1109|               }
+         1110|           ) (addErrorContext "while evaluating definitions from `${m.file}':" (dischargeProperties m.value))
+             |                                                                                ^
+         1111|         ) defs;
+
+       … while calling 'dischargeProperties'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1203:5:
+         1202|   dischargeProperties =
+         1203|     def:
+             |     ^
+         1204|     if def._type or "" == "merge" then
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1207:7:
+         1206|     else if def._type or "" == "if" then
+         1207|       if isBool def.condition then
+             |       ^
+         1208|         if def.condition then dischargeProperties def.content else [ ]
+
+       … while calling the 'isBool' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1207:10:
+         1206|     else if def._type or "" == "if" then
+         1207|       if isBool def.condition then
+             |          ^
+         1208|         if def.condition then dischargeProperties def.content else [ ]
+
+       … while evaluating the attribute 'condition'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1363:13:
+         1362|     _type = "if";
+         1363|     inherit condition content;
+             |             ^
+         1364|   };
+
+       … while evaluating the attribute 'condition'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1363:13:
+         1362|     _type = "if";
+         1363|     inherit condition content;
+             |             ^
+         1364|   };
+
+       … from call site
+         at /nix/store/cya6rar29df88p1fcb4jd3x5xcc2qc7q-source/wrappers/_shared.nix:29:9:
+           28|     ;
+           29|   cfg = config.programs.nixvim;
+             |         ^
+           30|
+
+       … while calling anonymous lambda
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/attrsets.nix:1182:17:
+         1181|         mapAttrs (
+         1182|           name: value:
+             |                 ^
+         1183|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/attrsets.nix:1183:85:
+         1182|           name: value:
+         1183|           if isAttrs value && cond value then recurse (path ++ [ name ]) value else f (path ++ [ name ]) value
+             |                                                                                     ^
+         1184|         );
+
+       … while calling anonymous lambda
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:273:71:
+          272|           # For definitions that have an associated option
+          273|           declaredConfig = mapAttrsRecursiveCond (v: !isOption v) (_: v: v.value) options;
+             |                                                                       ^
+          274|
+
+       … while evaluating the attribute 'value'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1084:7:
+         1083|     // {
+         1084|       value = addErrorContext "while evaluating the option `${showOption loc}':" value;
+             |       ^
+         1085|       inherit (res.defsFinal') highestPrio;
+
+       … while evaluating the option `programs.nixvim':
+
+       … while evaluating the attribute 'mergedValue'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1131:5:
+         1130|     # Type-check the remaining definitions, and merge them. Or throw if no definitions.
+         1131|     mergedValue =
+             |     ^
+         1132|       if isDefined then
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:1134:11:
+         1133|         if all (def: type.check def.value) defsFinal then
+         1134|           type.merge loc defsFinal
+             |           ^
+         1135|         else
+
+       … while calling 'merge'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/types.nix:1238:18:
+         1237|           merge =
+         1238|             loc: defs:
+             |                  ^
+         1239|             (base.extendModules {
+
+       … while evaluating the attribute 'config'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:359:9:
+          358|         options = checked options;
+          359|         config = checked (removeAttrs config [ "_module" ]);
+             |         ^
+          360|         _module = checked (config._module);
+
+       … while calling the 'seq' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:359:18:
+          358|         options = checked options;
+          359|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          360|         _module = checked (config._module);
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:295:9:
+          294|       checkUnmatched =
+          295|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
+             |         ^
+          296|           let
+
+       … in the left operand of the AND (&&) operator
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:295:72:
+          294|       checkUnmatched =
+          295|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
+             |                                                                        ^
+          296|           let
+
+       … in the left operand of the AND (&&) operator
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:295:33:
+          294|       checkUnmatched =
+          295|         if config._module.check && config._module.freeformType == null && merged.unmatchedDefns != [ ] then
+             |                                 ^
+          296|           let
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:286:9:
+          285|         in
+          286|         if declaredConfig._module.freeformType == null then
+             |         ^
+          287|           declaredConfig
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:273:28:
+          272|           # For definitions that have an associated option
+          273|           declaredConfig = mapAttrsRecursiveCond (v: !isOption v) (_: v: v.value) options;
+             |                            ^
+          274|
+
+       … while calling 'mapAttrsRecursiveCond'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/attrsets.nix:1177:14:
+         1176|   mapAttrsRecursiveCond =
+         1177|     cond: f: set:
+             |              ^
+         1178|     let
+
+       … while calling the 'mapAttrs' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/attrsets.nix:1186:5:
+         1185|     in
+         1186|     recurse [ ] set;
+             |     ^
+         1187|
+
+       … while evaluating the attribute 'matchedOptions'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:856:15:
+          855|     {
+          856|       inherit matchedOptions;
+             |               ^
+          857|
+
+       … while calling the 'mapAttrs' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:846:24:
+          845|
+          846|       matchedOptions = mapAttrs (n: v: v.matchedOptions) resultsByName;
+             |                        ^
+          847|
+
+       … while calling the 'mapAttrs' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:794:23:
+          793|
+          794|       resultsByName = mapAttrs (
+             |                       ^
+          795|         name: decls:
+
+       … while calling the 'zipAttrsWith' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:710:21:
+          709|       # an attrset 'name' => list of submodules that declare ‘name’.
+          710|       declsByName = zipAttrsWith (n: v: v) (
+             |                     ^
+          711|         map (
+
+       … while calling the 'map' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:711:9:
+          710|       declsByName = zipAttrsWith (n: v: v) (
+          711|         map (
+             |         ^
+          712|           module:
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:265:30:
+          264|         in
+          265|         mergeModules prefix (reverseList collected);
+             |                              ^
+          266|
+
+       … while calling 'reverseList'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/lists.nix:1103:5:
+         1102|   reverseList =
+         1103|     xs:
+             |     ^
+         1104|     let
+
+       … while calling the 'genList' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/lists.nix:1107:5:
+         1106|     in
+         1107|     genList (n: elemAt xs (l - n - 1)) l;
+             |     ^
+         1108|
+
+       … while evaluating the second argument passed to builtins.genList
+
+       … while calling the 'length' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/lists.nix:1105:11:
+         1104|     let
+         1105|       l = length xs;
+             |           ^
+         1106|     in
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:251:13:
+          250|           collected =
+          251|             collectModules class (specialArgs.modulesPath or "") (regularModules ++ [ internalModule ])
+             |             ^
+          252|               (
+
+       … while calling anonymous lambda
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:522:34:
+          521|     in
+          522|     modulesPath: initialModules: args:
+             |                                  ^
+          523|     filterModules modulesPath (collectStructuredModules unknownModule "" initialModules args);
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:523:5:
+          522|     modulesPath: initialModules: args:
+          523|     filterModules modulesPath (collectStructuredModules unknownModule "" initialModules args);
+             |     ^
+          524|
+
+       … while calling 'filterModules'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:492:9:
+          491|         modulesPath:
+          492|         { disabled, modules }:
+             |         ^
+          493|         let
+
+       … while calling the 'map' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:516:9:
+          515|         in
+          516|         map (attrs: attrs.module) (genericClosure {
+             |         ^
+          517|           startSet = keyFilter modules;
+
+       … while calling the 'genericClosure' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:516:36:
+          515|         in
+          516|         map (attrs: attrs.module) (genericClosure {
+             |                                    ^
+          517|           startSet = keyFilter modules;
+
+       … while calling the 'filter' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:517:22:
+          516|         map (attrs: attrs.module) (genericClosure {
+          517|           startSet = keyFilter modules;
+             |                      ^
+          518|           operator = attrs: keyFilter attrs.modules;
+
+       … while calling anonymous lambda
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:514:31:
+          513|           disabledKeys = concatMap ({ file, disabled }: map (moduleKey file) disabled) disabled;
+          514|           keyFilter = filter (attrs: !elem attrs.key disabledKeys);
+             |                               ^
+          515|         in
+
+       … in the argument of the not operator
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:514:39:
+          513|           disabledKeys = concatMap ({ file, disabled }: map (moduleKey file) disabled) disabled;
+          514|           keyFilter = filter (attrs: !elem attrs.key disabledKeys);
+             |                                       ^
+          515|         in
+
+       … while calling the 'elem' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:514:39:
+          513|           disabledKeys = concatMap ({ file, disabled }: map (moduleKey file) disabled) disabled;
+          514|           keyFilter = filter (attrs: !elem attrs.key disabledKeys);
+             |                                       ^
+          515|         in
+
+       … while calling the 'concatMap' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:513:26:
+          512|
+          513|           disabledKeys = concatMap ({ file, disabled }: map (moduleKey file) disabled) disabled;
+             |                          ^
+          514|           keyFilter = filter (attrs: !elem attrs.key disabledKeys);
+
+       … while calling the 'concatLists' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:453:24:
+          452|           collectResults = modules: {
+          453|             disabled = concatLists (catAttrs "disabled" modules);
+             |                        ^
+          454|             inherit modules;
+
+       … while evaluating the attribute 'disabled'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:453:13:
+          452|           collectResults = modules: {
+          453|             disabled = concatLists (catAttrs "disabled" modules);
+             |             ^
+          454|             inherit modules;
+
+       (7 duplicate frames omitted)
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:471:19:
+          470|                 (
+          471|                   if module.disabledModules != [ ] then
+             |                   ^
+          472|                     [
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:462:24:
+          461|             let
+          462|               module = checkModule (loadModule args parentFile "${parentKey}:anon-${toString n}" x);
+             |                        ^
+          463|               collectedImports = collectStructuredModules module._file module.key module.imports args;
+
+       … while calling anonymous lambda
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:423:11:
+          422|         else
+          423|           m: m;
+             |           ^
+          424|
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:462:37:
+          461|             let
+          462|               module = checkModule (loadModule args parentFile "${parentKey}:anon-${toString n}" x);
+             |                                     ^
+          463|               collectedImports = collectStructuredModules module._file module.key module.imports args;
+
+       … while calling 'loadModule'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:376:42:
+          375|       loadModule =
+          376|         args: fallbackFile: fallbackKey: m:
+             |                                          ^
+          377|         if isFunction m then
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:404:11:
+          403|         else
+          404|           unifyModuleSyntax (toString m) (toString m) (
+             |           ^
+          405|             applyModuleArgsIfFunction (toString m) (import m) args
+
+       … while calling 'unifyModuleSyntax'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:562:16:
+          561|   unifyModuleSyntax =
+          562|     file: key: m:
+             |                ^
+          563|     let
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:583:5:
+          582|     in
+          583|     if m ? config || m ? options then
+             |     ^
+          584|       let
+
+       … in the left operand of the OR (||) operator
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:583:19:
+          582|     in
+          583|     if m ? config || m ? options then
+             |                   ^
+          584|       let
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:405:13:
+          404|           unifyModuleSyntax (toString m) (toString m) (
+          405|             applyModuleArgsIfFunction (toString m) (import m) args
+             |             ^
+          406|           );
+
+       … while calling 'applyModuleArgsIfFunction'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:632:13:
+          631|   applyModuleArgsIfFunction =
+          632|     key: f: args@{ config, ... }: if isFunction f then applyModuleArgs key f args else f;
+             |             ^
+          633|
+
+       … while evaluating a branch condition
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:632:35:
+          631|   applyModuleArgsIfFunction =
+          632|     key: f: args@{ config, ... }: if isFunction f then applyModuleArgs key f args else f;
+             |                                   ^
+          633|
+
+       … from call site
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:632:38:
+          631|   applyModuleArgsIfFunction =
+          632|     key: f: args@{ config, ... }: if isFunction f then applyModuleArgs key f args else f;
+             |                                      ^
+          633|
+
+       … while calling 'isFunction'
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/trivial.nix:1023:16:
+         1022|   */
+         1023|   isFunction = f: builtins.isFunction f || (f ? __functor && isFunction (f.__functor f));
+             |                ^
+         1024|
+
+       … in the left operand of the OR (||) operator
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/trivial.nix:1023:41:
+         1022|   */
+         1023|   isFunction = f: builtins.isFunction f || (f ? __functor && isFunction (f.__functor f));
+             |                                         ^
+         1024|
+
+       … while calling the 'isFunction' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/trivial.nix:1023:19:
+         1022|   */
+         1023|   isFunction = f: builtins.isFunction f || (f ? __functor && isFunction (f.__functor f));
+             |                   ^
+         1024|
+
+       … while calling the 'import' builtin
+         at /nix/store/qvzh8safmlwl7akk3ffgx1mjw8hs2w76-source/lib/modules.nix:405:53:
+          404|           unifyModuleSyntax (toString m) (toString m) (
+          405|             applyModuleArgsIfFunction (toString m) (import m) args
+             |                                                     ^
+          406|           );
+
+       error: syntax error, unexpected '?', expecting '.' or '='
+       at /nix/store/cya6rar29df88p1fcb4jd3x5xcc2qc7q-source/plugins/by-name/wilder/default.nix:206:14:
+          205|
+          206|     postHook ? helpers.defaultNullOpts.mkLuaFn "nil" ''
+             |              ^
+          207|       A function which takes a `ctx`.

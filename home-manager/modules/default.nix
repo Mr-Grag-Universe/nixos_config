@@ -10,6 +10,6 @@
 		# ./vpn.nix
 
 		# ./nvim
-        	./nixvim
+		./nixvim
 	];
 }
