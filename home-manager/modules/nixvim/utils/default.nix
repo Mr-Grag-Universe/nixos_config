@@ -28,7 +28,7 @@
     ./vim-floaterm.nix # for terminal
     ./wakatime.nix # for programming statistics (useless, but shiny)
     # ./which-key.nix
-    ./wilder.nix # for vim :xxx command nicer interface
+    # ./wilder.nix # for vim :xxx command nicer interface
   ];
 
   options = {
@@ -58,6 +58,6 @@
     vim-floaterm.enable = lib.mkDefault true;
     wakatime.enable = lib.mkDefault false;
     # which-key.enable = lib.mkDefault true;
-    wilder.enable = lib.mkDefault true;
+    # wilder.enable = lib.mkDefault true;
   };
 }
