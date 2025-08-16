@@ -26,7 +26,8 @@
     # flood
     kdePackages.okular
     gedit
-		# memtester
+    # memtester
+    anki
 
     # LibreOffice
     libreoffice-qt

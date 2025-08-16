@@ -38,13 +38,17 @@
     # Enable the X11 windowing system.
     enable = true;
 
-    videoDrivers = [ "amdgpu" ];
+    # videoDrivers = [ "amdgpu" ];
   
     displayManager = {
+      defaultSession = "xfce";
       # Enable the XFCE Desktop Environment.
       lightdm.enable = false;
+      # lightdm.enable = true;
+      
       gdm = {
         enable = true;
+        # enable = false;
         wayland = true;
       };
       

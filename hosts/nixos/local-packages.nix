@@ -1,5 +1,6 @@
 { pkgs, ... }: {
 	environment.systemPackages = with pkgs; [
+		home-manager
 		gcc
 		bash
 		kdePackages.kdenlive
@@ -16,11 +17,11 @@
 		})
 		helm-dashboard 
 		kubectl
-		gitlab
-		gitlab-runner
-		tor
+		# gitlab
+		# gitlab-runner
+		# tor
 		torctl
-		vagrant
+		# vagrant
 		gparted
 		qbittorrent
 		# docker
